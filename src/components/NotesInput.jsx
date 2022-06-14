@@ -23,4 +23,4 @@ function NotesInput() {
   );
 }
 
-export { NotesInput };
+export default NotesInput;

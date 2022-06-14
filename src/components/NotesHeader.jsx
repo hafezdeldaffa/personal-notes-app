@@ -12,4 +12,4 @@ function NotesHeader() {
   );
 }
 
-export { NotesHeader };
+export default NotesHeader;

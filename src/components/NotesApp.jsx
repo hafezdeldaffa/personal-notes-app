@@ -1,13 +1,22 @@
 import React from 'react';
-import { NotesAppBody } from './NotesAppBody';
-import { NotesHeader } from './NotesHeader';
+import { getInitialData } from '../utils';
+import NotesAppBody from './NotesAppBody';
+import NotesHeader from './NotesHeader';
 
 class NotesApp extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      notes: getInitialData(),
+    };
+  }
+
   render() {
     return (
       <div>
         <NotesHeader />
-        <NotesAppBody />
+        <NotesAppBody notes={this.state.notes} />
       </div>
     );
   }
