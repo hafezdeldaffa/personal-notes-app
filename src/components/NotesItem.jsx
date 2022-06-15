@@ -5,7 +5,15 @@ import NotesItemBody from './NotesItemBody';
 import NotesItemDate from './NotesItemDate';
 import NotesItemTitle from './NotesItemTitle';
 
-function NotesItem({ id, title, createdAt, body, archived, onDelete }) {
+function NotesItem({
+  id,
+  title,
+  createdAt,
+  body,
+  archived,
+  onArchived,
+  onDelete,
+}) {
   return (
     <div className='note-item'>
       <div className='note-item__content'>
@@ -15,7 +23,7 @@ function NotesItem({ id, title, createdAt, body, archived, onDelete }) {
       </div>
       <div className='note-item__action'>
         <DeleteButton id={id} onDelete={onDelete} />
-        <ArchiveButton />
+        <ArchiveButton id={id} onArchived={onArchived} />
       </div>
     </div>
   );

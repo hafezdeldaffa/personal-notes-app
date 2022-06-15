@@ -12,6 +12,7 @@ class NotesApp extends React.Component {
     };
 
     this.onDeleteHandler = this.onDeleteHandler.bind(this);
+    this.onArchivedHandler = this.onArchivedHandler.bind(this);
   }
 
   onDeleteHandler(id) {
@@ -36,6 +37,12 @@ class NotesApp extends React.Component {
     });
   };
 
+  onArchivedHandler(id) {
+    const note = this.state.notes.find((note) => note.id === id);
+    note.archived = true;
+    this.setState({ note });
+  }
+
   render() {
     return (
       <div>
@@ -44,6 +51,7 @@ class NotesApp extends React.Component {
           notes={this.state.notes}
           onDelete={this.onDeleteHandler}
           addNotes={this.onAddNotesHandler}
+          onArchived={this.onArchivedHandler}
         />
       </div>
     );

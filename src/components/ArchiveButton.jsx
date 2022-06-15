@@ -1,7 +1,14 @@
 import React from 'react';
 
-function ArchiveButton(props) {
-  return <button className='note-item__archive-button'>Arsipkan</button>;
+function ArchiveButton({ id, onArchived }) {
+  return (
+    <button
+      className='note-item__archive-button'
+      onClick={() => onArchived(id)}
+    >
+      Arsipkan
+    </button>
+  );
 }
 
 export default ArchiveButton;

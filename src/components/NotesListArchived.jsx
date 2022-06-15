@@ -1,11 +1,11 @@
 import React from 'react';
 import NotesItem from './NotesItem';
 
-function NotesList({ notes, onDelete, onArchived }) {
+function NotesListArchived({ notes, onDelete, onArchived }) {
   return (
     <div className='notes-list'>
       {notes
-        .filter((note) => note.archived === false)
+        .filter((note) => note.archived === true)
         .map((note) => (
           <NotesItem
             key={note.id}
@@ -19,4 +19,4 @@ function NotesList({ notes, onDelete, onArchived }) {
   );
 }
 
-export default NotesList;
+export default NotesListArchived;
